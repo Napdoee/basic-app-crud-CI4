@@ -8,37 +8,25 @@
     <title><?= $title ?></title>
     <!-- My CSS -->
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <?= $this->include('layout/navbar') ?>
+    <?= $this->include('layout/sidebar') ?>
 
-    <div class="container">
-        <?= $this->renderSection('content') ?>
+    <div class="main-content">
+        <?= $this->include('layout/navbar') ?>
+        <div class="container">
+            <?= $this->renderSection('content') ?>
+        </div>
     </div>
 
     <?= $this->include('layout/footer') ?>
 
     <!-- Jquery dan JS -->
     <script src="<?= base_url('js/jquery-3.5.1.js') ?>"></script>
-    <script>
-    function closeBtn(e) {
-        const alert = document.querySelector('.alert');
-        alert.style.display = 'none';
-    }
-
-    function previewImg() {
-        const cover = document.querySelector('#cover');
-        const imgPreview = document.querySelector('.img-preview');
-
-        const fileCover = new FileReader();
-        fileCover.readAsDataURL(cover.files[0]);
-
-        fileCover.onload = function(e) {
-            imgPreview.src = e.target.result;
-        }
-    }
-    </script>
+    <script src="<?= base_url('js/script.js') ?>"></script>
 </body>
 
 </html>

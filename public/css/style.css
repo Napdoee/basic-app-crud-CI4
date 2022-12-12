@@ -4,15 +4,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: 0.3s all ease-in;
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   /* outline: none; */
 }
 
-/* body {
-  background-color: #efefef;
-} */
+body {
+  /* background-color: #777; */
+  scroll-behavior: smooth;
+}
 
 .container {
   /* display: grid; */
@@ -22,18 +22,15 @@
 
 .navbar {
   width: 100%;
-  background-color: cadetblue;
+  background-color: #5f9ea0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 3%;
+  padding: 5px 2%;
   margin-bottom: 10px;
-}
 
-.logo {
-  /* font-size: 13px; */
-  text-transform: uppercase;
-  font-weight: 500;
+  position: sticky;
+  top: 0;
 }
 
 .menu {
@@ -52,8 +49,13 @@
   color: #ddd;
 }
 
-.menu > li > a:hover {
+.menu > li > a:hover:not(.icon) {
   border-bottom: 1px solid;
+}
+
+.menu > li > a.icon {
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .search {
@@ -109,17 +111,17 @@
 }
 
 .primary {
-  background-color: cornflowerblue;
+  background-color: #6495ed;
   color: #fff;
 }
 
 .secondary {
-  background-color: lightseagreen;
-  color: #fff;
+  background-color: #5f9ea0;
+  color: #eee;
 }
 
 .success {
-  background-color: aquamarine;
+  background-color: #7fffd4;
 }
 
 .warning {
@@ -311,4 +313,87 @@
 .closeBtn {
   font-size: 30px;
   cursor: pointer;
+}
+
+/* Sidebar CSS */
+.main-content {
+  margin-left: 250px;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8px 18px;
+  /* text-align: center; */
+  /* background-color: #eb5b5b; */
+  /* height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  color: #ddd;
+}
+
+.sidebar {
+  display: block;
+  background-color: #449699;
+  width: 250px;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebar > .sidemenu {
+  list-style: none;
+  /* border: 1px solid; */
+  /* margin: 25px 0 0; */
+}
+
+.sidebar > .sidemenu > .items {
+  /* border: 1px solid; */
+  display: flex;
+  gap: 5px;
+  padding: 10px 15px;
+  margin: 7px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+  color: #ddd;
+}
+
+.sidebar > .sidemenu > .items > .description {
+  color: #ddd;
+  margin-left: 3px;
+  font-size: 16px;
+}
+
+.sidebar > .sidemenu > .items:hover {
+  background-color: #4db0b3;
+  transition: all ease-in 0.2s;
+}
+
+.sidebar > .sidemenu > .items.active {
+  background-color: #4db0b3;
+}
+
+.profile {
+  margin-top: 12px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile .img-profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile p {
+  color: #ddd;
+  margin: 10px 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.toggleNav {
+  display: none;
 }

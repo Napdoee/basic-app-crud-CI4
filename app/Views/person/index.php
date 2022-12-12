@@ -57,7 +57,7 @@
 <div class="flex-center">
     <div>
         <i>Showing <?= (empty($person) ? 0 : 1) + (10 * ($currentPage - 1)) ?> to <?= $no - 1 ?> of
-            <?= $pager->getPageCount('person') ?> entries</i>
+            <?= $pager->getTotal('person') ?> entries</i>
     </div>
     <?= $pager->links('person', 'pagination') ?>
 </div>
